@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen bei Fuat Cibir</title>
+
+    
+    <style>
+        body {
+        margin-top: 0%;
+        padding: 0%;
+        font-family: Arial, sans-serif;
+    }
+   
+    .hintergrundbild { 
+        height: 100vh;
+        width: 100%;
+        object-fit:cover;
+        filter: brightness(45%);
+    }
+
+    .impressum {
+        position: fixed;
+        left: 2%;    
+        bottom: 2%;   
+        display: flex;
+        align-items: center;
+        opacity: 0,6;
+
+    }
+        img {
+            width: 7%;
+    }
+        
+    .link_farbe {
+        color: #949494; 
+        text-decoration: none;
+        margin-left: 1.875rem;
+   }
+
+     .link_farbe:hover {
+            text-decoration: underline;
+    }
+
+
+    .willkommenstext {
+    position: absolute;
+    color: rgb(138, 138, 138);
+    left: 48.5%; 
+    top: 23%;  
+    transform: translate(-50%, -50%);
+    font-size: 1rem; 
+    letter-spacing: 0.125rem; 
+    text-align: center;
+    text-shadow: 
+        0 0 0.125rem #fff, 
+        0 0 1.25rem #fff, 
+        0 0 2.5rem #0ff,   
+        0 0 5rem #0ff,    
+        0 0 5.625rem #0ff, 
+        0 0 6.25rem #0ff, 
+        0 0 9.375rem #0ff;
+}
+
+
+.tür {
+    position: absolute;
+    bottom: 36%;
+    left: 45.8%; 
+    transform: translate(-45.8%);
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-2deg);
+    }
+
+
+.design {
+    color: rgba(212, 204, 204, 0.781);
+    margin-bottom: 1.875rem; 
+    text-decoration: none;
+    font-size: 1.375rem; 
+    text-shadow: 
+        0 0 0.3125rem #fff,  
+        0 0 1.25rem #fff,    
+        0 0 2.5rem #0ff,    
+        0 0 5rem #0ff,      
+        0 0 5.625rem #0ff,   
+        0 0 6.25rem #0ff,   
+        0 0 9.375rem #0ff;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+    
+    .design:hover {
+        color: #ff0000;
+        text-shadow: 
+        0 0 0.3125rem #ff0000,  
+        0 0 1.25rem #ff0000,    
+        0 0 2.5rem #ff0000,    
+        0 0 5rem #ff0000,      
+        0 0 5.625rem #ff0000,   
+        0 0 6.25rem #ff0000,   
+        0 0 9.375rem #ff0000;
+    }    
+    
+    
+
+
+    </style>
+
+
+</head>
+<body>
+<img class="hintergrundbild" src="/Bilder/backround.JPG" alt="Hintergrundbild">
+
+<div class="tür">
+    <a class="design" href="Unteseite Musik.html">Musik</a>
+    <a class="design" href="Unterseite Kunst.html">Kunst</a>
+    <a class="design" href="Unterseite Projekte.html">Projekte</a>
+    <a class="design" href="Unterseite Über Mich.html">Über Mich</a>
+</div>
+
+<nav class="impressum">
+    <img src="Bilder/Logo.jpg" class="Logo">
+
+        <div>
+            <a class="link_farbe" href="">Sammelsurium</a>
+            <a class="link_farbe" href="">Kontakt</a>
+            <a class="link_farbe" href="">Impressum</a>
+            </div>
+</nav>
+
+<h1 class="willkommenstext">Entdecken Sie die Vielfalt meiner künstlerischen Ausdrucksformen</h1>
+
+
+</body>
+</html>

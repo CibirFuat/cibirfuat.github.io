@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunst</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .Hintergrundbild {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            filter: blur(2px) brightness(80%);
+        }
+
+        .Ueberschrift1 {
+            position: absolute;
+            left: 4%;
+            top: 5%;
+            font-size: 3rem;
+        }
+
+        .Fotos {
+            position: absolute;
+            top: 25%;
+            left: 4%;
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .vertikal {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .thumbnail {
+            width: 130px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        /* Styles für die große Bildansicht */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .lightbox img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+
+        .lightbox .prev, .lightbox .next {
+            position: absolute;
+            top: 50%;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+
+        .lightbox .prev {
+            left: 5%;
+        }
+
+        .lightbox .next {
+            right: 5%;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<img class="Hintergrundbild" src="Bilder/Skatepark.png" alt="Hintergrundbild">
+
+<h1 class="Ueberschrift1">Fotografien</h1>
+
+<div class="Fotos">
+    <div class="vertikal">
+        <img src="Bilder/Japan_People2.JPG" alt="Japan_People2" class="thumbnail">
+        <img src="Bilder/Japan_rain.JPG" alt="Japan_rain" class="thumbnail">
+        <img src="Bilder/London.JPG" alt="London" class="thumbnail">
+        <img src="Bilder/Tokio.jpg" alt="Tokio" class="thumbnail">
+    </div>
+
+    <div class="vertikal">
+        <img src="Bilder/Wood.JPG" alt="Baeume" class="thumbnail">
+        <img src="Bilder/Shrine.JPG" alt="Shrine" class="thumbnail">
+        <img src="Bilder/Kreuz.JPG" alt="Kreuz" class="thumbnail">
+        <img src="Bilder/Logo.jpg" alt="Profilansicht" class="thumbnail">
+    </div>
+</div>
+
+<!-- Lightbox für große Bildansicht -->
+<div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img src="" alt="Großes Bild" id="lightbox-img">
+    <span class="next">&#10095;</span>
+</div>
+
+<script src="Javascript_Unterseite_Kunst.js"></script>
+
+</body>
+</html>
