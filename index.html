@@ -133,12 +133,26 @@
       object-fit: cover;
     }
 
-    /* Tonproduktion Hintergrund (Platzhalter) */
+    /* Tonproduktion Hintergrund und mobiles Bild */
     #ton {
-      background-image: url('https://picsum.photos/1201/801');
+      background-image: url('images/background/Tonproduktion_1920.JPG');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    #ton img.ton-bild {
+      display: none;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      object-fit: cover;
     }
 
-    /* Schreiberei Hintergrund + mobiles Bild */
+    /* Schreiberei Hintergrund und mobiles Bild */
     #schreib {
       background-image: url('images/background/Schreibfeder_1920.jpg');
       background-attachment: fixed;
@@ -157,7 +171,7 @@
       object-fit: cover;
     }
 
-    /* Sonstige Projekte Hintergrund + mobiles Bild */
+    /* Sonstige Projekte Hintergrund und mobiles Bild */
     #sonstige {
       background-image: url('images/background/sonstige_1920.jpg');
       background-attachment: fixed;
@@ -201,6 +215,9 @@
       #kunst {
         background-image: url('images/background/Kunstschaffen_1200.jpg');
       }
+      #ton {
+        background-image: url('images/background/Tonproduktion_1200.JPG');
+      }
       #schreib {
         background-image: url('images/background/Schreibfeder_1200.jpg');
       }
@@ -227,6 +244,16 @@
         display: block;
       }
       #kunst .overlay {
+        padding: 25px;
+      }
+
+      #ton {
+        background-image: none;
+      }
+      #ton img.ton-bild {
+        display: block;
+      }
+      #ton .overlay {
         padding: 25px;
       }
 
@@ -321,6 +348,7 @@
 </section>
 
 <section id="ton" class="parallax">
+  <img src="images/background/Tonproduktion_768.JPG" alt="Tonproduktion Bild" class="ton-bild" />
   <div class="overlay floaty">
     <h1>Tonproduktion</h1>
     <p>Musik als Frequenz, die das Unsichtbare berührt. Meine Kompositionen und Sounddesigns sind Klangwelten, die dich in andere Sphären tragen.</p>
@@ -345,4 +373,5 @@
 
 </body>
 </html>
+
 
