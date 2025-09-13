@@ -93,11 +93,31 @@
       background-position: center;
     }
 
-    #ueber { background-image: url('https://picsum.photos/1203/803?blur'); }
+    /* Hintergrundbilder für alle Sektionen außer Über Mich bleiben unverändert */
     #kunst { background-image: url('https://picsum.photos/1200/800?grayscale'); }
     #ton { background-image: url('https://picsum.photos/1201/801'); }
     #schreib { background-image: url('https://picsum.photos/1202/802'); }
     #sonstige { background-image: url('https://picsum.photos/1204/804'); }
+
+    /* Über Mich Hintergrund mit responsiven Bildern */
+    #ueber {
+      background-image: url('images/uebermich_1920.JPG');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 1200px) {
+      #ueber {
+        background-image: url('images/uebermich_1200.JPG');
+      }
+    }
+
+    @media (max-width: 768px) {
+      #ueber {
+        background-image: url('images/uebermich_768.JPG');
+      }
+    }
 
     .overlay {
       background: rgba(0,0,0,0.6);
@@ -207,6 +227,7 @@
 
 </body>
 </html>
+
 
 
 
