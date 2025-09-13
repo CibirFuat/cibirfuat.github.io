@@ -5,39 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        /* Grundlayout */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            color: #222;
+            background-color: #1a1a1a; /* sehr dunkles Grau */
+            color: #eee;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
         }
+
+        h1 {
+            font-weight: 300;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
         nav {
             display: flex;
-            gap: 40px;
+            gap: 60px;
+            position: relative;
         }
+
         nav a {
             text-decoration: none;
-            color: #555;
+            color: #aaa;
             font-size: 1.5rem;
-            transition: color 0.3s, text-shadow 0.3s;
+            position: relative;
+            transition: color 0.3s;
         }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+
         nav a:hover {
             color: #fff;
-            text-shadow: 0 0 10px #aaa;
         }
-        h1 {
-            margin-bottom: 50px;
-            font-weight: normal;
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Linien als Designelement */
+        .line {
+            position: absolute;
+            width: 80%;
+            height: 1px;
+            background-color: #333;
+        }
+
+        .line-top {
+            top: 20%;
+        }
+
+        .line-bottom {
+            bottom: 20%;
+        }
+
+        .line-left {
+            top: 0;
+            left: 10%;
+            width: 1px;
+            height: 80%;
+        }
+
+        .line-right {
+            top: 0;
+            right: 10%;
+            width: 1px;
+            height: 80%;
         }
     </style>
 </head>
 <body>
+    <!-- Linien -->
+    <div class="line line-top"></div>
+    <div class="line line-bottom"></div>
+    <div class="line line-left"></div>
+    <div class="line line-right"></div>
+
     <h1>Mein Portfolio</h1>
+
     <nav>
         <a href="kunstschaffen.html">Kunstschaffen</a>
         <a href="tonverarbeitung.html">Tonverarbeitung</a>
@@ -46,6 +108,7 @@
     </nav>
 </body>
 </html>
+
 
 
 
