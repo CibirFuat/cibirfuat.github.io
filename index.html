@@ -2,153 +2,175 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Willkommen bei Fuat Cibir</title>
-    
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
+            background-color: black;
             font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Kein horizontaler Scroll */
+            overflow-x: hidden;
         }
-        .hintergrundbild { 
+        .container {
+            max-width: 1200px;
             height: 100vh;
-            width: 100vw;
-            object-fit: cover;
+            margin: 0 auto;
+            position: relative;
+            background-image: url('Bilder/backround.JPG');
+            background-size: cover;
+            background-position: center;
             filter: brightness(45%);
-            display: block;
-        }
-        .impressum {
-            position: fixed;
-            left: 2%;    
-            bottom: 2%;   
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            opacity: 0.6; /* Korrigiert von 0,6 zu 0.6 */
-            gap: 1rem;
-            font-size: 0.9rem;
-        }
-        .impressum img {
-            width: 7vw;
-            max-width: 50px; /* Maximalgröße */
-            height: auto;
-        }
-        .link_farbe {
-            color: #949494; 
-            text-decoration: none;
-        }
-        .link_farbe:hover {
-            text-decoration: underline;
+            color: rgb(138, 138, 138);
+            padding: 0 1rem;
+            box-sizing: border-box;
         }
         .willkommenstext {
-            position: absolute;
-            color: rgb(138, 138, 138);
-            left: 50%; 
-            top: 23%;  
-            transform: translate(-50%, -50%);
-            font-size: 2vw; /* Verkleinerte Schriftgröße */
+            font-size: 2vw;
             max-width: 90vw;
-            letter-spacing: 0.125rem; 
+            letter-spacing: 0.125rem;
             text-align: center;
-            text-shadow: 
-                0 0 0.125rem #fff, 
-                0 0 1.25rem #fff, 
-                0 0 2.5rem #0ff,   
-                0 0 5rem #0ff,    
-                0 0 5.625rem #0ff, 
-                0 0 6.25rem #0ff, 
+            text-shadow:
+                0 0 0.125rem #fff,
+                0 0 1.25rem #fff,
+                0 0 2.5rem #0ff,
+                0 0 5rem #0ff,
+                0 0 5.625rem #0ff,
+                0 0 6.25rem #0ff,
                 0 0 9.375rem #0ff;
             line-height: 1.2;
+            margin-bottom: 50px;
         }
         .tür {
-            position: absolute;
-            bottom: 30%;
-            left: 50%; 
-            transform: translateX(-50%) rotate(-2deg);
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             align-items: center;
+            transform: rotate(-2deg);
+            flex-wrap: wrap;
         }
         .design {
             color: rgba(212, 204, 204, 0.78);
             text-decoration: none;
-            font-size: 1.5rem; 
-            text-shadow: 
-                0 0 0.3rem #fff,  
-                0 0 1.25rem #fff,    
-                0 0 2.5rem #0ff,    
-                0 0 5rem #0ff,      
-                0 0 5.625rem #0ff,   
-                0 0 6.25rem #0ff,   
+            font-size: 1.5rem;
+            text-shadow:
+                0 0 0.3rem #fff,
+                0 0 1.25rem #fff,
+                0 0 2.5rem #0ff,
+                0 0 5rem #0ff,
+                0 0 5.625rem #0ff,
+                0 0 6.25rem #0ff,
                 0 0 9.375rem #0ff;
             transition: color 0.3s ease, text-shadow 0.3s ease;
+            white-space: nowrap;
         }
         .design:hover {
             color: #ff0000;
-            text-shadow: 
-                0 0 0.3rem #ff0000,  
-                0 0 1.25rem #ff0000,    
-                0 0 2.5rem #ff0000,    
-                0 0 5rem #ff0000,      
-                0 0 5.625rem #ff0000,   
-                0 0 6.25rem #ff0000,   
+            text-shadow:
+                0 0 0.3rem #ff0000,
+                0 0 1.25rem #ff0000,
+                0 0 2.5rem #ff0000,
+                0 0 5rem #ff0000,
+                0 0 5.625rem #ff0000,
+                0 0 6.25rem #ff0000,
                 0 0 9.375rem #ff0000;
         }
-        /* Responsive Anpassungen für kleine Bildschirme */
+        nav.impressum {
+            position: fixed;
+            left: 2%;
+            bottom: 2%;
+            display: flex;
+            align-items: center;
+            opacity: 0.6;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #949494;
+            flex-wrap: wrap;
+            max-width: calc(100% - 4%);
+        }
+        nav.impressum img {
+            width: 40px;
+            height: auto;
+        }
+        nav.impressum a {
+            color: #949494;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        nav.impressum a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive Anpassungen */
+        @media (max-width: 992px) {
+            .willkommenstext {
+                font-size: 3vw;
+            }
+            .design {
+                font-size: 1.3rem;
+            }
+        }
         @media (max-width: 768px) {
             .willkommenstext {
-                font-size: 4vw; /* Angepasst von 5vw */
-                top: 20%;
-                letter-spacing: 0.05rem;
+                font-size: 4vw;
             }
             .tür {
-                bottom: 25%;
                 gap: 1rem;
             }
             .design {
                 font-size: 1.2rem;
             }
-            .impressum {
+            nav.impressum {
                 font-size: 0.8rem;
             }
-            .impressum img {
-                width: 10vw;
-                max-width: 40px;
+            nav.impressum img {
+                width: 30px;
             }
         }
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
             .willkommenstext {
-                font-size: 5vw; /* Angepasst von 6vw */
-                letter-spacing: 0.03rem;
-                top: 18%;
+                font-size: 5vw;
             }
             .tür {
-                bottom: 20%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .design {
                 font-size: 1rem;
+                margin: 0 0.5rem 0.5rem 0.5rem;
+            }
+            nav.impressum {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            nav.impressum a {
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
-    <img class="hintergrundbild" src="Bilder/backround.JPG" alt="Hintergrundbild" />
-    <div class="tür">
-        <a class="design" href="Unteseite Musik.html">Musik</a>
-        <a class="design" href="Unterseite Kunst.html">Kunst</a>
-        <a class="design" href="Unterseite Projekte.html">Projekte</a>
-        <a class="design" href="Unterseite Über Mich.html">Über Mich</a>
+    <div class="container">
+        <h1 class="willkommenstext">Diese Seite ist im Aufbau</h1>
+        <div class="tür">
+            <a class="design" href="Unteseite Musik.html">Musik</a>
+            <a class="design" href="Unterseite Kunst.html">Kunst</a>
+            <a class="design" href="Unterseite Projekte.html">Projekte</a>
+            <a class="design" href="Unterseite Über Mich.html">Über Mich</a>
+        </div>
     </div>
     <nav class="impressum">
         <img src="Bilder/Logo.jpg" alt="Logo" />
-        <div>
-            <a class="link_farbe" href="">Sammelsurium</a>
-            <a class="link_farbe" href="">Kontakt</a>
-            <a class="link_farbe" href="">Impressum</a>
-        </div>
+        <a href="">Sammelsurium</a>
+        <a href="">Kontakt</a>
+        <a href="">Impressum</a>
     </nav>
-    <h1 class="willkommenstext">Diese Seite ist im Aufbau</h1>
 </body>
 </html>
+
