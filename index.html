@@ -18,10 +18,6 @@
             height: 100vh;
             margin: 0 auto;
             position: relative;
-            background-image: url('Bilder/backround.JPG');
-            background-size: cover;
-            background-position: center;
-            /* filter entfernt, so bleibt die volle Helligkeit */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -29,6 +25,19 @@
             color: rgb(138, 138, 138);
             padding: 0 1rem;
             box-sizing: border-box;
+            /* Entfernt bisherigen Background-Image, da wir img nutzen */
+            background: none;
+        }
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(45%);
+            z-index: -1;
         }
         .willkommenstext {
             font-size: 2vw;
@@ -45,6 +54,8 @@
                 0 0 9.375rem #0ff;
             line-height: 1.2;
             margin-bottom: 50px;
+            position: relative; /* sorgt, dass Text über Bild liegt */
+            z-index: 1;
         }
         .tür {
             display: flex;
@@ -53,6 +64,8 @@
             align-items: center;
             transform: rotate(-2deg);
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
         .design {
             color: rgba(212, 204, 204, 0.78);
@@ -68,6 +81,8 @@
                 0 0 9.375rem #0ff;
             transition: color 0.3s ease, text-shadow 0.3s ease;
             white-space: nowrap;
+            position: relative;
+            z-index: 1;
         }
         .design:hover {
             color: #ff0000;
@@ -92,6 +107,7 @@
             color: #949494;
             flex-wrap: wrap;
             max-width: calc(100% - 4%);
+            z-index: 1;
         }
         nav.impressum img {
             width: 40px;
@@ -157,6 +173,15 @@
 </head>
 <body>
     <div class="container">
+        <img 
+          src="Bilder/Mainpage/Mainpage_480.jpg" 
+          srcset="
+            Bilder/Mainpage/Mainpage_480.jpg 480w,
+            Bilder/Mainpage/Mainpage_800.jpg 800w,
+            Bilder/Mainpage/Mainpage_1200.jpg 1200w"
+          sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+          alt="Titelbild"
+          class="header-image" />
         <h1 class="willkommenstext">Diese Seite ist im Aufbau</h1>
         <div class="tür">
             <a class="design" href="Unteseite Musik.html">Musik</a>
