@@ -66,6 +66,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
     h1 {
@@ -99,30 +101,33 @@
     #schreib { background-image: url('https://picsum.photos/1202/802'); }
     #sonstige { background-image: url('https://picsum.photos/1204/804'); }
 
-    /* Über Mich Hintergrund mit responsiven Bildern aus dem Ordner images/background */
+    /* Über Mich Hintergrund mit responsive Bildern im Hintergrund-Ordner */
     #ueber {
       background-image: url('images/background/uebermich_1920.JPG');
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
+      position: relative;
     }
 
-    @media (max-width: 1200px) {
-      #ueber {
-        background-image: url('images/background/uebermich_1200.JPG');
-      }
-    }
-
-    @media (max-width: 768px) {
-      #ueber {
-        background-image: url('images/background/uebermich_768.JPG');
-      }
+    /* Bild als normales img für Mobil */
+    #ueber img.ueber-bild {
+      display: none;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      object-fit: cover;
     }
 
     .overlay {
       background: rgba(0,0,0,0.6);
       padding: 40px;
       border-radius: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Fancy floating effect */
@@ -136,7 +141,22 @@
     }
 
     /* Responsive Anpassungen */
+    @media (max-width: 1200px) {
+      #ueber {
+        background-image: url('images/background/uebermich_1200.JPG');
+      }
+    }
+
     @media (max-width: 768px) {
+      #ueber {
+        background-image: none;
+      }
+      #ueber img.ueber-bild {
+        display: block;
+      }
+      #ueber .overlay {
+        padding: 25px;
+      }
       nav a {
         font-size: 1.5rem;
         margin: 0 10px;
@@ -173,7 +193,7 @@
         font-size: 0.9rem;
       }
       .overlay {
-        padding: 25px;
+        padding: 20px;
       }
     }
   </style>
@@ -189,16 +209,15 @@
       <a href="#sonstige">Sonstige Projekte</a>
     </nav>
   </header>
-xml
-<section id="ueber" class="parallax">
-  <div class="overlay floaty">
-    <h1>Über Mich</h1>
-    <p>Ich bin eine suchende Seele zwischen Kunst, Musik und Sprache.</p>
-    <p>Im Ruhrgebiet geboren, nach vielen Jahren in Köln nun in Berlin zuhause. Meine kreativen Schwerpunkte reichen von der bildenden Kunst, Öl- und Acrylmalerei, Zeichnung, Fotografie und Videografie, bis hin zur Musik. Dort bewege ich mich im Ambient Kosmos und in der elektronischen Musik, experimentiere mit analogen Synthesizern und spiele Schlagzeug.</p>
-    <p>Schon seit meiner Jugend schreibe ich regelmäßig und erweitere so meine künstlerische Arbeit um eine weitere Ausdrucksform. Als Mediengestalter für Bild und Ton habe ich meine Leidenschaft für Film und audiovisuelle Gestaltung vertieft. Neben Kunst und Musik begeistert mich die IT, in der ich mich aktuell durch eine Weiterbildung weiterentwickle.</p>
-  </div>
-</section>
 
+  <section id="ueber" class="parallax">
+    <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
+    <div class="overlay floaty">
+      <h1>Über Mich</h1>
+      <p>Ich bin eine suchende Seele zwischen Kunst, Musik und Sprache. Im Ruhrgebiet geboren, nach vielen Jahren in Köln nun in Berlin zuhause. Meine kreativen Schwerpunkte reichen von der bildenden Kunst, Öl- und Acrylmalerei, Zeichnung, Fotografie und Videografie, bis hin zur Musik. Dort bewege ich mich im Ambient Kosmos und in der elektronischen Musik, experimentiere mit analogen Synthesizern und spiele Schlagzeug. 
+      Schon seit meiner Jugend schreibe ich regelmäßig und erweitere so meine künstlerische Arbeit um eine weitere Ausdrucksform. Als Mediengestalter für Bild und Ton habe ich meine Leidenschaft für Film und audiovisuelle Gestaltung vertieft. Neben Kunst und Musik begeistert mich die IT, in der ich mich aktuell durch eine Weiterbildung weiterentwickle.</p>
+    </div>
+  </section>
 
   <section id="kunst" class="parallax">
     <div class="overlay floaty">
@@ -230,6 +249,7 @@ xml
 
 </body>
 </html>
+
 
 
 
