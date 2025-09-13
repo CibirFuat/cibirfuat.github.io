@@ -143,21 +143,15 @@
 </head>
 <body>
   <div class="container">
-    <picture>
-      <!-- WebP-Varianten -->
-      <source srcset="Bilder/Mainpage/Mainpage_1200.webp" type="image/webp" media="(min-width: 901px)">
-      <source srcset="Bilder/Mainpage/Mainpage_800.webp" type="image/webp" media="(min-width: 601px)">
-      <source srcset="Bilder/Mainpage/Mainpage_480.webp" type="image/webp">
-
-      <!-- Fallback JPEG -->
-      <source srcset="Bilder/Mainpage/Mainpage_1200.jpg" media="(min-width: 901px)">
-      <source srcset="Bilder/Mainpage/Mainpage_800.jpg" media="(min-width: 601px)">
-      <img src="Bilder/Mainpage/Mainpage_480.jpg"
-           alt="Titelbild"
-           class="header-image"
-           loading="eager"
-           fetchpriority="high">
-    </picture>
+    <img 
+      src="Bilder/Mainpage/Mainpage_480.jpg" 
+      srcset="
+        Bilder/Mainpage/Mainpage_480.jpg 480w,
+        Bilder/Mainpage/Mainpage_800.jpg 800w,
+        Bilder/Mainpage/Mainpage_1200.jpg 1200w"
+      sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+      alt="Titelbild"
+      class="header-image" />
 
     <h1 class="willkommenstext">Diese Seite ist im Aufbau</h1>
 
@@ -177,6 +171,7 @@
   </nav>
 </body>
 </html>
+
 
 
 
