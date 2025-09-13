@@ -95,12 +95,11 @@
       background-position: center;
     }
 
-    /* Hintergrundbilder für Sektionen Ton, Schreib, Sonstige */
+    /* Hintergrundbilder für Sektionen Ton, Schreib */
     #ton { background-image: url('https://picsum.photos/1201/801'); }
     #schreib { background-image: url('https://picsum.photos/1202/802'); }
-    #sonstige { background-image: url('https://picsum.photos/1204/804'); }
 
-    /* Über Mich Hintergrund mit responsive Bildern im Background-Ordner */
+    /* Über Mich Hintergrund mit responsive Bildern */
     #ueber {
       background-image: url('images/background/uebermich_1920.JPG');
       background-attachment: fixed;
@@ -109,7 +108,6 @@
       position: relative;
     }
 
-    /* Bild als normales img für Mobil */
     #ueber img.ueber-bild {
       display: none;
       width: 100%;
@@ -130,8 +128,27 @@
       position: relative;
     }
 
-    /* Kunstschaffen als img für Mobil */
     #kunst img.kunst-bild {
+      display: none;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Sonstige Projekte Hintergrund */
+    #sonstige {
+      background-image: url('images/background/sonstige_1920.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    #sonstige img.sonstige-bild {
       display: none;
       width: 100%;
       height: auto;
@@ -160,13 +177,16 @@
       50% { transform: translateY(-20px); }
     }
 
-    /* Responsive Bildwechsel für Über Mich */
+    /* Responsive Bildwechsel */
     @media (max-width: 1200px) {
       #ueber {
         background-image: url('images/background/uebermich_1200.JPG');
       }
       #kunst {
         background-image: url('images/background/Kunstschaffen_1200.jpg');
+      }
+      #sonstige {
+        background-image: url('images/background/sonstige_1200.jpg');
       }
     }
 
@@ -180,6 +200,7 @@
       #ueber .overlay {
         padding: 25px;
       }
+
       #kunst {
         background-image: none;
       }
@@ -187,6 +208,16 @@
         display: block;
       }
       #kunst .overlay {
+        padding: 25px;
+      }
+
+      #sonstige {
+        background-image: none;
+      }
+      #sonstige img.sonstige-bild {
+        display: block;
+      }
+      #sonstige .overlay {
         padding: 25px;
       }
 
@@ -275,6 +306,7 @@
   </section>
 
   <section id="sonstige" class="parallax">
+    <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
     <div class="overlay floaty">
       <h1>Sonstige Projekte</h1>
       <p>Hier findest du weitere Projekte, experimentelle Arbeiten und kreative Ideen, die sich nicht in die anderen Kategorien einordnen lassen.</p>
@@ -283,24 +315,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
