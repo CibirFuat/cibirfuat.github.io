@@ -95,11 +95,7 @@
       background-position: center;
     }
 
-    /* Hintergrundbilder für Sektionen Ton, Schreib */
-    #ton { background-image: url('https://picsum.photos/1201/801'); }
-    #schreib { background-image: url('https://picsum.photos/1202/802'); }
-
-    /* Über Mich Hintergrund mit responsive Bildern */
+    /* Über Mich Hintergrund und mobiles Bild */
     #ueber {
       background-image: url('images/background/uebermich_1920.JPG');
       background-attachment: fixed;
@@ -107,7 +103,6 @@
       background-position: center;
       position: relative;
     }
-
     #ueber img.ueber-bild {
       display: none;
       width: 100%;
@@ -119,7 +114,7 @@
       object-fit: cover;
     }
 
-    /* Kunstschaffen Hintergrund */
+    /* Kunstschaffen Hintergrund und mobiles Bild */
     #kunst {
       background-image: url('images/background/Kunstschaffen_1920.jpg');
       background-attachment: fixed;
@@ -127,7 +122,6 @@
       background-position: center;
       position: relative;
     }
-
     #kunst img.kunst-bild {
       display: none;
       width: 100%;
@@ -139,7 +133,31 @@
       object-fit: cover;
     }
 
-    /* Sonstige Projekte Hintergrund */
+    /* Tonproduktion Hintergrund (Platzhalter) */
+    #ton {
+      background-image: url('https://picsum.photos/1201/801');
+    }
+
+    /* Schreiberei Hintergrund + mobiles Bild */
+    #schreib {
+      background-image: url('images/background/Schreibfeder_1920.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    #schreib img.schreib-bild {
+      display: none;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Sonstige Projekte Hintergrund + mobiles Bild */
     #sonstige {
       background-image: url('images/background/sonstige_1920.jpg');
       background-attachment: fixed;
@@ -147,7 +165,6 @@
       background-position: center;
       position: relative;
     }
-
     #sonstige img.sonstige-bild {
       display: none;
       width: 100%;
@@ -171,7 +188,6 @@
     .floaty {
       animation: float 6s ease-in-out infinite;
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
@@ -184,6 +200,9 @@
       }
       #kunst {
         background-image: url('images/background/Kunstschaffen_1200.jpg');
+      }
+      #schreib {
+        background-image: url('images/background/Schreibfeder_1200.jpg');
       }
       #sonstige {
         background-image: url('images/background/sonstige_1200.jpg');
@@ -208,6 +227,16 @@
         display: block;
       }
       #kunst .overlay {
+        padding: 25px;
+      }
+
+      #schreib {
+        background-image: none;
+      }
+      #schreib img.schreib-bild {
+        display: block;
+      }
+      #schreib .overlay {
         padding: 25px;
       }
 
@@ -264,54 +293,56 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#ueber">Über Mich</a>
-      <a href="#kunst">Kunstschaffen</a>
-      <a href="#ton">Tonproduktion</a>
-      <a href="#schreib">Schreibfeder</a>
-      <a href="#sonstige">Sonstige Projekte</a>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <a href="#ueber">Über Mich</a>
+    <a href="#kunst">Kunstschaffen</a>
+    <a href="#ton">Tonproduktion</a>
+    <a href="#schreib">Schreibfeder</a>
+    <a href="#sonstige">Sonstige Projekte</a>
+  </nav>
+</header>
 
-  <section id="ueber" class="parallax">
-    <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
-    <div class="overlay floaty">
-      <h1>Über Mich</h1>
-      <p>Ich bin eine suchende Seele zwischen Kunst, Musik und Sprache. Im Ruhrgebiet geboren, nach vielen Jahren in Köln nun in Berlin zuhause. Meine kreativen Schwerpunkte reichen von der bildenden Kunst, Öl- und Acrylmalerei, Zeichnung, Fotografie und Videografie, bis hin zur Musik. Dort bewege ich mich im Ambient Kosmos und in der elektronischen Musik, experimentiere mit analogen Synthesizern und spiele Schlagzeug. 
+<section id="ueber" class="parallax">
+  <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
+  <div class="overlay floaty">
+    <h1>Über Mich</h1>
+    <p>Ich bin eine suchende Seele zwischen Kunst, Musik und Sprache. Im Ruhrgebiet geboren, nach vielen Jahren in Köln nun in Berlin zuhause. Meine kreativen Schwerpunkte reichen von der bildenden Kunst, Öl- und Acrylmalerei, Zeichnung, Fotografie und Videografie, bis hin zur Musik. Dort bewege ich mich im Ambient Kosmos und in der elektronischen Musik, experimentiere mit analogen Synthesizern und spiele Schlagzeug. 
       Schon seit meiner Jugend schreibe ich regelmäßig und erweitere so meine künstlerische Arbeit um eine weitere Ausdrucksform. Als Mediengestalter für Bild und Ton habe ich meine Leidenschaft für Film und audiovisuelle Gestaltung vertieft. Neben Kunst und Musik begeistert mich die IT, in der ich mich aktuell durch eine Weiterbildung weiterentwickle.</p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section id="kunst" class="parallax">
-    <img src="images/background/Kunstschaffen_768.jpg" alt="Kunstschaffen Bild" class="kunst-bild" />
-    <div class="overlay floaty">
-      <h1>Kunstschaffen</h1>
-      <p>Hier präsentiere ich mein visuelles Werk: Malerei, Illustration und digitale Kunst. Von kräftigen Farbexplosionen bis hin zu leisen Linien, alles ist ein Ausdruck meiner <span class="highlight">inneren Welt</span>.</p>
-    </div>
-  </section>
+<section id="kunst" class="parallax">
+  <img src="images/background/Kunstschaffen_768.jpg" alt="Kunstschaffen Bild" class="kunst-bild" />
+  <div class="overlay floaty">
+    <h1>Kunstschaffen</h1>
+    <p>Hier präsentiere ich mein visuelles Werk: Malerei, Illustration und digitale Kunst. Von kräftigen Farbexplosionen bis hin zu leisen Linien, alles ist ein Ausdruck meiner <span class="highlight">inneren Welt</span>.</p>
+  </div>
+</section>
 
-  <section id="ton" class="parallax">
-    <div class="overlay floaty">
-      <h1>Tonproduktion</h1>
-      <p>Musik als Frequenz, die das Unsichtbare berührt. Meine Kompositionen und Sounddesigns sind Klangwelten, die dich in andere Sphären tragen.</p>
-    </div>
-  </section>
+<section id="ton" class="parallax">
+  <div class="overlay floaty">
+    <h1>Tonproduktion</h1>
+    <p>Musik als Frequenz, die das Unsichtbare berührt. Meine Kompositionen und Sounddesigns sind Klangwelten, die dich in andere Sphären tragen.</p>
+  </div>
+</section>
 
-  <section id="schreib" class="parallax">
-    <div class="overlay floaty">
-      <h1>Schreibfeder</h1>
-      <p>Gedanken in Worte gefasst. Poesie, Kurzgeschichten und fragmentarische Texte – hier entstehen Zeilen, die zum Nachklang werden.</p>
-    </div>
-  </section>
+<section id="schreib" class="parallax">
+  <img src="images/background/Schreibfeder_768.jpg" alt="Schreibfeder Bild" class="schreib-bild" />
+  <div class="overlay floaty">
+    <h1>Schreibfeder</h1>
+    <p>Gedanken in Worte gefasst. Poesie, Kurzgeschichten und fragmentarische Texte – hier entstehen Zeilen, die zum Nachklang werden.</p>
+  </div>
+</section>
 
-  <section id="sonstige" class="parallax">
-    <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
-    <div class="overlay floaty">
-      <h1>Sonstige Projekte</h1>
-      <p>Hier findest du weitere Projekte, experimentelle Arbeiten und kreative Ideen, die sich nicht in die anderen Kategorien einordnen lassen.</p>
-    </div>
-  </section>
+<section id="sonstige" class="parallax">
+  <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
+  <div class="overlay floaty">
+    <h1>Sonstige Projekte</h1>
+    <p>Hier findest du weitere Projekte, experimentelle Arbeiten und kreative Ideen, die sich nicht in die anderen Kategorien einordnen lassen.</p>
+  </div>
+</section>
 
 </body>
 </html>
+
