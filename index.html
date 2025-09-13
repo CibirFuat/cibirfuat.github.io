@@ -1,90 +1,204 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Calibri', sans-serif;
-            background-color: #1a1a1a;
-            color: #eee;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway:wght@300&display=swap');
 
-        h1 {
-            font-weight: 300;
-            font-size: 3rem;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
-            text-align: center;
-        }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
 
-        nav {
-            display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    body {
+      background: linear-gradient(120deg, #151515, #2c003e, #002f4b);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      font-family: 'Raleway', sans-serif;
+      color: #fefefe;
+      overflow-x: hidden;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #aaa;
-            font-size: 1.5rem;
-            position: relative;
-            transition: color 0.3s;
-        }
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: #fff;
-            transition: width 0.3s;
-        }
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
 
-        nav a:hover {
-            color: #fff;
-        }
+    nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Amatic SC', cursive;
+      font-size: 2rem;
+      position: relative;
+    }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #ff69b4;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            nav a { font-size: 1.2rem; gap: 20px; }
-        }
+    nav a:hover::after {
+      width: 100%;
+    }
 
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; margin-bottom: 30px; }
-            nav { gap: 15px; }
-            nav a { font-size: 1rem; }
-        }
-    </style>
+    section {
+      min-height: 100vh;
+      padding: 80px 10% 40px 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 5rem;
+      margin-bottom: 30px;
+    }
+
+    p {
+      max-width: 700px;
+      line-height: 1.8;
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    .highlight {
+      color: #ff69b4;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #kunst { background-image: url('https://picsum.photos/1200/800?grayscale'); }
+    #ton { background-image: url('https://picsum.photos/1201/801'); }
+    #schreib { background-image: url('https://picsum.photos/1202/802'); }
+    #ueber { background-image: url('https://picsum.photos/1203/803?blur'); }
+
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    /* Fancy floating effect */
+    .floaty {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Responsive Anpassungen */
+    @media (max-width: 768px) {
+      nav a {
+        font-size: 1.5rem;
+        margin: 0 10px;
+      }
+
+      section {
+        padding: 80px 5% 40px 5%;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        font-size: 1.2rem;
+        margin: 0 8px;
+      }
+      section {
+        padding: 60px 4% 30px 4%;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .overlay {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Mein Portfolio</h1>
 
+  <header>
     <nav>
-        <a href="kunstschaffen.html">Kunstschaffen</a>
-        <a href="tonverarbeitung.html">Tonverarbeitung</a>
-        <a href="schreibfeder.html">Schreibfeder</a>
-        <a href="uebermich.html">Über Mich</a>
+      <a href="#kunst">Kunstschaffen</a>
+      <a href="#ton">Tonproduktion</a>
+      <a href="#schreib">Schreibfeder</a>
+      <a href="#ueber">Über Mich</a>
     </nav>
+  </header>
+
+  <section id="kunst" class="parallax">
+    <div class="overlay floaty">
+      <h1>Kunstschaffen</h1>
+      <p>Hier präsentiere ich mein visuelles Werk: Malerei, Illustration und digitale Kunst. Von kräftigen Farbexplosionen bis hin zu leisen Linien, alles ist ein Ausdruck meiner <span class="highlight">inneren Welt</span>.</p>
+    </div>
+  </section>
+
+  <section id="ton" class="parallax">
+    <div class="overlay floaty">
+      <h1>Tonproduktion</h1>
+      <p>Musik als Frequenz, die das Unsichtbare berührt. Meine Kompositionen und Sounddesigns sind Klangwelten, die dich in andere Sphären tragen.</p>
+    </div>
+  </section>
+
+  <section id="schreib" class="parallax">
+    <div class="overlay floaty">
+      <h1>Schreibfeder</h1>
+      <p>Gedanken in Worte gefasst. Poesie, Kurzgeschichten und fragmentarische Texte – hier entstehen Zeilen, die zum Nachklang werden.</p>
+    </div>
+  </section>
+
+  <section id="ueber" class="parallax">
+    <div class="overlay floaty">
+      <h1>Über Mich</h1>
+      <p>Ich bin eine suchende Seele zwischen Kunst, Musik und Sprache. Meine Arbeiten sind Spuren eines Weges, der nie fertig ist, sondern sich ständig neu erfindet.</p>
+    </div>
+  </section>
+
 </body>
 </html>
+
 
 
 
