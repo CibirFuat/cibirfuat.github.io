@@ -105,16 +105,11 @@
 </head>
 <body>
   <div class="container">
-    <img 
-      src="Bilder/Mainpage/Mainpage_1200.jpg" 
-      srcset="
-        Bilder/Mainpage/Mainpage_480.jpg 480w,
-        Bilder/Mainpage/Mainpage_800.jpg 800w,
-        Bilder/Mainpage/Mainpage_1200.jpg 1200w"
-      sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
-      alt="Titelbild"
-      class="header-image" />
+    <!-- nur große JPG-Bilder nutzen -->
+    <img src="Bilder/Mainpage/Mainpage_1200.jpg" alt="Titelbild" class="header-image">
+    
     <h1 class="willkommenstext">Diese Seite ist im Aufbau</h1>
+    
     <div class="tür">
       <a class="design" href="Unterseite Musik.html">Musik</a>
       <a class="design" href="Unterseite Kunst.html">Kunst</a>
@@ -122,14 +117,16 @@
       <a class="design" href="Unterseite Über Mich.html">Über Mich</a>
     </div>
   </div>
+
   <nav class="impressum">
-    <img src="Bilder/Logo.jpg" alt="Logo" />
+    <img src="Bilder/Logo.jpg" alt="Logo">
     <a href="#">Sammelsurium</a>
     <a href="#">Kontakt</a>
     <a href="#">Impressum</a>
   </nav>
 </body>
 </html>
+
 
 
 
