@@ -11,18 +11,12 @@
             background-color: #1a1a1a;
             color: #eee;
             display: flex;
-            justify-content: center; /* zentriert den Container horizontal */
-            padding: 40px 20px;
-            box-sizing: border-box;
-        }
-
-        .container {
-            max-width: 1200px; /* maximale Breite */
-            width: 100%;
-            display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         h1 {
@@ -67,65 +61,31 @@
             width: 100%;
         }
 
-        /* Markante Linien */
-        .design-line {
-            position: absolute;
-            background-color: #333;
-        }
-
-        .line-horizontal {
-            height: 4px;
-            width: 60%;
-            left: 20%;
-        }
-
-        .line-vertical {
-            width: 4px;
-            height: 60%;
-            top: 20%;
-        }
-
-        .top-line { top: 10%; }
-        .bottom-line { bottom: 10%; }
-        .left-line { left: 10%; }
-        .right-line { right: 10%; }
-
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            nav a { font-size: 1.2rem; }
-            .line-horizontal { width: 80%; left: 10%; }
-            .line-vertical { height: 50%; top: 25%; }
+            nav a { font-size: 1.2rem; gap: 20px; }
         }
 
         @media (max-width: 480px) {
             h1 { font-size: 1.8rem; margin-bottom: 30px; }
-            nav { gap: 20px; }
+            nav { gap: 15px; }
             nav a { font-size: 1rem; }
-            .line-horizontal { width: 90%; left: 5%; }
-            .line-vertical { height: 40%; top: 30%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Markante Linien -->
-        <div class="design-line line-horizontal top-line"></div>
-        <div class="design-line line-horizontal bottom-line"></div>
-        <div class="design-line line-vertical left-line"></div>
-        <div class="design-line line-vertical right-line"></div>
+    <h1>Mein Portfolio</h1>
 
-        <h1>Mein Portfolio</h1>
-
-        <nav>
-            <a href="kunstschaffen.html">Kunstschaffen</a>
-            <a href="tonverarbeitung.html">Tonverarbeitung</a>
-            <a href="schreibfeder.html">Schreibfeder</a>
-            <a href="uebermich.html">Über Mich</a>
-        </nav>
-    </div>
+    <nav>
+        <a href="kunstschaffen.html">Kunstschaffen</a>
+        <a href="tonverarbeitung.html">Tonverarbeitung</a>
+        <a href="schreibfeder.html">Schreibfeder</a>
+        <a href="uebermich.html">Über Mich</a>
+    </nav>
 </body>
 </html>
+
 
 
 
