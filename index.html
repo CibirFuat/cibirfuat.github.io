@@ -67,7 +67,6 @@
     margin-bottom: 30px;
   }
   p {
-    max-width: 700px;
     line-height: 1.8;
     font-size: 1.2rem;
     opacity: 0.85;
@@ -120,21 +119,22 @@
   #kunst .content-wrapper {
     display: flex;
     gap: 20px;
-    flex-wrap: nowrap; /* WICHTIG: keine Zeilenumbruch, nebeneinander */
+    flex-wrap: nowrap;
     align-items: flex-start;
   }
+  /* schmaler Textcontainer für mehr Platz für Bilder */
   #kunst-text {
-    flex: 1 1 400px;
-    min-width: 280px;
+    flex: 1 1 300px; /* verändert von 400px auf 300px */
+    min-width: 250px;
   }
   #kunst-gallery {
-    flex: 1 1 600px;
+    flex: 1 1 650px; /* etwas mehr Platz weil mehr Bilder */
     display: flex;
     gap: 10px;
     justify-content: center;
   }
   #kunst-gallery img {
-    width: 140px; /* Feste Breite für gleichmäßige Thumbnails */
+    width: 120px; /* kleinere Breite um mehr Bilder nebeneinander */
     border-radius: 8px;
     cursor: pointer;
     object-fit: cover;
@@ -229,7 +229,6 @@
     }
   }
   @media (max-width: 768px) {
-    /* Hintergrundbilder aus und mobiles Bild an */
     #ueber {
       background-image: none;
     }
@@ -290,7 +289,7 @@
       font-size: 1rem;
       max-width: 100%;
     }
-    /* Auf mobilen Geräten Galerie unter dem Text, Bilder größer */
+    /* Auf mobilen Geräten Galerie unter dem Text */
     #kunst .content-wrapper {
       flex-direction: column;
       align-items: center;
@@ -380,6 +379,8 @@
         <img src="images/kunst/Kreuz.JPG" alt="Kreuz" tabindex="0" />
         <img src="images/kunst/London.JPG" alt="London" tabindex="0" />
         <img src="images/kunst/Stadt.jpg" alt="Stadt" tabindex="0" />
+        <img src="images/kunst/Schatten.JPG" alt="Schatten" tabindex="0" />
+        <img src="images/kunst/Ravioli.JPG" alt="Ravioli" tabindex="0" />
       </div>
     </div>
   </div>
