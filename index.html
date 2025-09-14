@@ -6,11 +6,9 @@
 <title>Portfolio</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway:wght@300&display=swap');
-
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
-
   body {
     background: linear-gradient(120deg, #151515, #2c003e, #002f4b);
     background-size: 400% 400%;
@@ -19,13 +17,11 @@
     color: #fefefe;
     overflow-x: hidden;
   }
-
   @keyframes gradientMove {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
   }
-
   header {
     position: fixed;
     top: 0; width: 100%;
@@ -35,7 +31,6 @@
     backdrop-filter: blur(8px);
     z-index: 10;
   }
-
   nav a {
     margin: 0 20px;
     text-decoration: none;
@@ -44,7 +39,6 @@
     font-size: 2rem;
     position: relative;
   }
-
   nav a::after {
     content: "";
     position: absolute;
@@ -55,11 +49,9 @@
     bottom: -5px;
     transition: 0.3s;
   }
-
   nav a:hover::after {
     width: 100%;
   }
-
   section {
     min-height: 100vh;
     padding: 80px 10% 40px 10%;
@@ -69,32 +61,27 @@
     position: relative;
     overflow: hidden;
   }
-
   h1 {
     font-family: 'Amatic SC', cursive;
     font-size: 5rem;
     margin-bottom: 30px;
   }
-
   p {
     max-width: 700px;
     line-height: 1.8;
     font-size: 1.2rem;
     opacity: 0.85;
   }
-
   .highlight {
     color: #ff69b4;
     font-weight: bold;
     font-style: italic;
   }
-
   .parallax {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
   }
-
   /* Über Mich Hintergrund, responsive und mobil */
   #ueber {
     background-image: url('images/background/uebermich_1920.JPG');
@@ -112,7 +99,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
   /* Kunstschaffen Hintergrund und mobiles Bild, plus Bilder rechts */
   #kunst {
     background-image: url('images/background/Kunstschaffen_1920.jpg');
@@ -130,7 +116,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
   /* Container für Text und Bildgalerie */
   #kunst .content-wrapper {
     display: flex;
@@ -153,11 +138,23 @@
     cursor: pointer;
     object-fit: cover;
     transition: transform 0.3s ease;
+    /* Kreative Hover Animation als Wackeln */
+    will-change: transform;
   }
-  #kunst-gallery img:hover {
-    transform: scale(1.05);
+  #kunst-gallery img:hover,
+  #kunst-gallery img:focus {
+    animation: wiggle 0.6s ease forwards;
+    outline: none;
   }
-
+  @keyframes wiggle {
+    0% { transform: scale(1) rotate(0deg) translateX(0); }
+    15% { transform: scale(1.07) rotate(5deg) translateX(2px); }
+    30% { transform: scale(1.05) rotate(-5deg) translateX(-2px); }
+    45% { transform: scale(1.07) rotate(5deg) translateX(2px); }
+    60% { transform: scale(1.05) rotate(-3deg) translateX(-1px); }
+    75% { transform: scale(1.07) rotate(3deg) translateX(1px); }
+    100% { transform: scale(1.05) rotate(0deg) translateX(0); }
+  }
   /* Tonproduktion Hintergrund und mobil */
   #ton {
     background-image: url('images/background/Tonproduktion_1920.JPG');
@@ -175,7 +172,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
   /* Schreiberei mit mobil */
   #schreib {
     background-image: url('images/background/Schreibfeder_1920.jpg');
@@ -193,7 +189,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
   /* Sonstige Projekte */
   #sonstige {
     background-image: url('images/background/sonstige_1920.jpg');
@@ -211,7 +206,6 @@
     z-index: -1;
     object-fit: cover;
   }
-
   .overlay {
     background: rgba(0,0,0,0.6);
     padding: 40px;
@@ -219,16 +213,13 @@
     position: relative;
     z-index: 1;
   }
-
   .floaty {
     animation: float 6s ease-in-out infinite;
   }
-
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
-
   /* Responsive Bildwechsel */
   @media (max-width: 1200px) {
     #ueber {
@@ -247,7 +238,6 @@
       background-image: url('images/background/sonstige_1200.jpg');
     }
   }
-
   @media (max-width: 768px) {
     /* Hintergrundbilder aus und mobiles Bild an */
     #ueber {
@@ -259,7 +249,6 @@
     #ueber .overlay {
       padding: 25px;
     }
-
     #kunst {
       background-image: none;
     }
@@ -269,7 +258,6 @@
     #kunst .overlay {
       padding: 25px;
     }
-
     #ton {
       background-image: none;
     }
@@ -279,7 +267,6 @@
     #ton .overlay {
       padding: 25px;
     }
-
     #schreib {
       background-image: none;
     }
@@ -289,7 +276,6 @@
     #schreib .overlay {
       padding: 25px;
     }
-
     #sonstige {
       background-image: none;
     }
@@ -299,26 +285,21 @@
     #sonstige .overlay {
       padding: 25px;
     }
-
     nav a {
       font-size: 1.5rem;
       margin: 0 10px;
     }
-
     section {
       padding: 80px 5% 40px 5%;
     }
-
     h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
     }
-
     p {
       font-size: 1rem;
       max-width: 100%;
     }
-
     /* Kunstschaffen Galerie unter dem Text auf Mobile */
     #kunst .content-wrapper {
       flex-direction: column;
@@ -329,7 +310,6 @@
       margin-top: 20px;
     }
   }
-
   @media (max-width: 480px) {
     nav a {
       font-size: 1.2rem;
@@ -349,7 +329,6 @@
       padding: 20px;
     }
   }
-
   /* Lightbox Overlay */
   #lightbox-overlay {
     position: fixed;
@@ -371,7 +350,6 @@
 </style>
 </head>
 <body>
-
 <header>
   <nav>
     <a href="#ueber">Über Mich</a>
@@ -381,7 +359,6 @@
     <a href="#sonstige">Sonstige Projekte</a>
   </nav>
 </header>
-
 <section id="ueber" class="parallax">
   <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
   <div class="overlay floaty">
@@ -391,7 +368,6 @@
       Die schnell voranschreitende Digitalisierung sehe ich als Chance, Kenntnisse zu vertiefen und mich weiter zu entwickeln, zumal ich mich schon seit meiner Adoleszenz mit diesem Bereich beschäftige.</p>
   </div>
 </section>
-
 <section id="kunst" class="parallax">
   <img src="images/background/Kunstschaffen_768.jpg" alt="Kunstschaffen Bild" class="kunst-bild" />
   <div class="overlay floaty">
@@ -401,15 +377,14 @@
         <p>Hier finden Sie eine kleine Auswahl meiner bildenden Kunst.</p>
       </div>
       <div id="kunst-gallery">
-        <img src="https://via.placeholder.com/300x200?text=Bild+1" alt="Bild 1" tabindex="0" />
-        <img src="https://via.placeholder.com/300x200?text=Bild+2" alt="Bild 2" tabindex="0" />
-        <img src="https://via.placeholder.com/300x200?text=Bild+3" alt="Bild 3" tabindex="0" />
-        <img src="https://via.placeholder.com/300x200?text=Bild+4" alt="Bild 4" tabindex="0" />
+        <img src="images/kunst/Japan.JPG" alt="Japan" tabindex="0" />
+        <img src="images/kunst/Kreuz.JPG" alt="Kreuz" tabindex="0" />
+        <img src="images/kunst/London.JPG" alt="London" tabindex="0" />
+        <img src="images/kunst/Stadt.jpg" alt="Stadt" tabindex="0" />
       </div>
     </div>
   </div>
 </section>
-
 <section id="ton" class="parallax">
   <img src="images/background/Tonproduktion_768.JPG" alt="Tonproduktion Bild" class="ton-bild" />
   <div class="overlay floaty">
@@ -417,7 +392,6 @@
     <p>Musik als Frequenz, die das Unsichtbare berührt. Meine Kompositionen und Sounddesigns sind Klangwelten, die dich in andere Sphären tragen.</p>
   </div>
 </section>
-
 <section id="schreib" class="parallax">
   <img src="images/background/Schreibfeder_768.jpg" alt="Schreibfeder Bild" class="schreib-bild" />
   <div class="overlay floaty">
@@ -425,7 +399,6 @@
     <p>Gedanken in Worte gefasst. Poesie, Kurzgeschichten und fragmentarische Texte – hier entstehen Zeilen, die zum Nachklang werden.</p>
   </div>
 </section>
-
 <section id="sonstige" class="parallax">
   <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
   <div class="overlay floaty">
@@ -433,24 +406,20 @@
     <p>Hier findest du weitere Projekte, experimentelle Arbeiten und kreative Ideen, die sich nicht in die anderen Kategorien einordnen lassen.</p>
   </div>
 </section>
-
 <div id="lightbox-overlay" tabindex="-1">
   <img src="" alt="Vergrößertes Bild" />
 </div>
-
 <script>
   const images = document.querySelectorAll('#kunst-gallery img');
   const lightbox = document.getElementById('lightbox-overlay');
   const lightboxImage = lightbox.querySelector('img');
-
   images.forEach(img => {
     img.addEventListener('click', () => {
-      lightboxImage.src = img.src.replace(/300x200/, '900x600'); // Größeres Bild simulieren
+      lightboxImage.src = img.src;
       lightboxImage.alt = img.alt;
       lightbox.style.display = 'flex';
       lightbox.focus();
     });
-
     img.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -458,12 +427,10 @@
       }
     });
   });
-
   lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
     lightboxImage.src = '';
   });
-
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && lightbox.style.display === 'flex') {
       lightbox.style.display = 'none';
@@ -471,9 +438,5 @@
     }
   });
 </script>
-
 </body>
 </html>
-
-
-
