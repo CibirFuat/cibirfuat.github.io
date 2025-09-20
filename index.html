@@ -16,7 +16,7 @@
     font-family: 'Raleway', sans-serif;
     color: #fefefe;
     overflow-x: hidden;
-    padding-bottom: 20px; /* Platz für Footer */
+    padding-bottom: 15px; /* Platz für winzigen Footer */
   }
   @keyframes gradientMove {
     0% {background-position: 0% 50%;}
@@ -94,12 +94,6 @@
   }
   #kunst img.kunst-bild {
     display: none;
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    z-index: -1;
   }
   #kunst .content-wrapper {
     display: flex;
@@ -130,20 +124,11 @@
   #ton {
     background-image: url('images/background/Tonproduktion_1920.JPG');
   }
-  #ton img.ton-bild {
-    display: none;
-  }
   #schreib {
     background-image: url('images/background/Schreibfeder_1920.jpg');
   }
-  #schreib img.schreib-bild {
-    display: none;
-  }
   #sonstige {
     background-image: url('images/background/sonstige_1920.jpg');
-  }
-  #sonstige img.sonstige-bild {
-    display: none;
   }
   .overlay {
     background: rgba(0,0,0,0.6);
@@ -168,7 +153,7 @@
   }
   @media (max-width: 768px) {
     #ueber, #kunst, #ton, #schreib, #sonstige { background-image: none; }
-    #ueber img.ueber-bild, #kunst img.kunst-bild, #ton img.ton-bild, #schreib img.schreib-bild, #sonstige img.sonstige-bild { display: block; width: 100%; }
+    #ueber img.ueber-bild, #kunst img.kunst-bild { display: block; width: 100%; }
     #kunst .content-wrapper { flex-direction: column; align-items: center; }
     #kunst-gallery {
       display: grid;
@@ -209,9 +194,9 @@
     bottom: 0; left: 0;
     width: 100%;
     text-align: center;
-    font-size: 0.5rem;   /* sehr klein */
-    opacity: 0.5;        /* dezent */
-    padding: 2px 4px;    /* ultraflach */
+    font-size: 0.25rem;  /* ultraklein */
+    opacity: 0.5;
+    padding: 1px 2px;    /* ultraflach */
     background: rgba(0,0,0,0.5);
     z-index: 10000;
   }
