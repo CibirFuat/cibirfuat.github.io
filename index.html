@@ -16,6 +16,7 @@
     font-family: 'Raleway', sans-serif;
     color: #fefefe;
     overflow-x: hidden;
+    padding-bottom: 40px; /* Platz für Footer, damit Content nicht überlappt */
   }
   @keyframes gradientMove {
     0% {background-position: 0% 50%;}
@@ -71,47 +72,34 @@
     font-size: 1.2rem;
     opacity: 0.85;
   }
-  .highlight {
-    color: #ff69b4;
-    font-weight: bold;
-    font-style: italic;
-  }
   .parallax {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
   }
-  /* Über Mich Hintergrund, responsive */
   #ueber {
     background-image: url('images/background/uebermich_1920.JPG');
-    background-size: cover;
-    background-position: center;
-    position: relative;
   }
   #ueber img.ueber-bild {
     display: none;
-    width: 100%;
-    height: auto;
     position: absolute;
     top: 0; left: 0;
-    z-index: -1;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    z-index: -1;
   }
-  /* Kunstschaffen */
   #kunst {
     background-image: url('images/background/Kunstschaffen_1920.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
   }
   #kunst img.kunst-bild {
     display: none;
-    width: 100%;
-    height: auto;
     position: absolute;
     top: 0; left: 0;
-    z-index: -1;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    z-index: -1;
   }
   #kunst .content-wrapper {
     display: flex;
@@ -136,58 +124,26 @@
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  #kunst-gallery img:hover,
-  #kunst-gallery img:focus {
+  #kunst-gallery img:hover {
     transform: scale(1.05);
-    outline: none;
   }
-  /* Tonproduktion */
   #ton {
     background-image: url('images/background/Tonproduktion_1920.JPG');
-    background-size: cover;
-    background-position: center;
-    position: relative;
   }
   #ton img.ton-bild {
     display: none;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-    object-fit: cover;
   }
-  /* Schreibfeder */
   #schreib {
     background-image: url('images/background/Schreibfeder_1920.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
   }
   #schreib img.schreib-bild {
     display: none;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-    object-fit: cover;
   }
-  /* Sonstige */
   #sonstige {
     background-image: url('images/background/sonstige_1920.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
   }
   #sonstige img.sonstige-bild {
     display: none;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-    object-fit: cover;
   }
   .overlay {
     background: rgba(0,0,0,0.6);
@@ -203,7 +159,6 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
-  /* Responsive */
   @media (max-width: 1200px) {
     #ueber { background-image: url('images/background/uebermich_1200.JPG'); }
     #kunst { background-image: url('images/background/Kunstschaffen_1200.jpg'); }
@@ -213,22 +168,17 @@
   }
   @media (max-width: 768px) {
     #ueber, #kunst, #ton, #schreib, #sonstige { background-image: none; }
-    #ueber img.ueber-bild, #kunst img.kunst-bild, #ton img.ton-bild, #schreib img.schreib-bild, #sonstige img.sonstige-bild { display: block; }
+    #ueber img.ueber-bild, #kunst img.kunst-bild, #ton img.ton-bild, #schreib img.schreib-bild, #sonstige img.sonstige-bild { display: block; width: 100%; }
     #kunst .content-wrapper { flex-direction: column; align-items: center; }
     #kunst-gallery {
-      flex: none;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
-      margin-top: 20px;
       width: 100%;
       max-width: 600px;
+      margin-top: 20px;
     }
     #kunst-gallery img { width: 100%; max-width: 280px; }
-    nav a { font-size: 1.5rem; margin: 0 10px; }
-    section { padding: 80px 5% 40px 5%; }
-    h1 { font-size: 3.5rem; margin-bottom: 20px; }
-    p { font-size: 1rem; }
   }
   @media (max-width: 480px) {
     nav a { font-size: 1.2rem; margin: 0 8px; }
@@ -237,7 +187,6 @@
     p { font-size: 0.9rem; }
     .overlay { padding: 20px; }
   }
-  /* Lightbox */
   #lightbox-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -255,13 +204,16 @@
     border-radius: 12px;
     box-shadow: 0 0 30px #000;
   }
-  /* Footer */
   footer {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     opacity: 0.6;
-    padding: 20px;
-    background: rgba(0,0,0,0.4);
+    padding: 6px 10px;
+    background: rgba(0,0,0,0.5);
+    z-index: 10000;
   }
 </style>
 </head>
@@ -275,13 +227,15 @@
     <a href="#sonstige">Sonstige Projekte</a>
   </nav>
 </header>
+
 <section id="ueber" class="parallax">
   <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
   <div class="overlay floaty">
     <h1>Über Mich</h1>
-    <p>Als kreativer Geist mit einer Leidenschaft für Kunst, Musik und Sprache begann meine künstlerische Ausdrucksweise bereits im Ruhrgebiet [...].</p>
+    <p>Als kreativer Geist mit einer Leidenschaft für Kunst, Musik und Sprache begann meine künstlerische Ausdrucksweise bereits im Ruhrgebiet, [...]</p>
   </div>
 </section>
+
 <section id="kunst" class="parallax">
   <img src="images/background/Kunstschaffen_768.jpg" alt="Kunstschaffen Bild" class="kunst-bild" />
   <div class="overlay floaty">
@@ -300,6 +254,7 @@
     </div>
   </div>
 </section>
+
 <section id="ton" class="parallax">
   <img src="images/background/Tonproduktion_768.JPG" alt="Tonproduktion Bild" class="ton-bild" />
   <div class="overlay floaty">
@@ -307,6 +262,7 @@
     <p>„Ohne Musik wäre das Leben ein Irrtum.“ — Friedrich Nietzsche</p>
   </div>
 </section>
+
 <section id="schreib" class="parallax">
   <img src="images/background/Schreibfeder_768.jpg" alt="Schreibfeder Bild" class="schreib-bild" />
   <div class="overlay floaty">
@@ -314,6 +270,7 @@
     <p>„Man muss erst zum Leben aufstehen, bevor man sich niedersetzt zum Schreiben.“ — Henry David Thoreau</p>
   </div>
 </section>
+
 <section id="sonstige" class="parallax">
   <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
   <div class="overlay floaty">
@@ -321,12 +278,15 @@
     <p>„Die Definition von Wahnsinn ist, immer wieder das Gleiche zu tun und andere Ergebnisse zu erwarten.“ — Albert Einstein</p>
   </div>
 </section>
+
 <div id="lightbox-overlay" tabindex="-1" role="dialog" aria-modal="true">
   <img src="" alt="Vergrößertes Bild" />
 </div>
+
 <footer>
   <p>Alle auf dieser Website gezeigten Inhalte (Bilder, Videos, Texte und Tonaufnahmen) sind Eigenproduktionen und urheberrechtlich geschützt.</p>
 </footer>
+
 <script>
   const images = document.querySelectorAll('#kunst-gallery img');
   const lightbox = document.getElementById('lightbox-overlay');
