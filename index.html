@@ -80,18 +80,14 @@
   #ueber {
     background-image: url('images/background/uebermich_1920.JPG');
   }
+  /* Das kleine Bild für Desktop komplett ausblenden */
   #ueber img.ueber-bild {
     display: none;
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    z-index: -1;
   }
   #kunst {
     background-image: url('images/background/Kunstschaffen_1920.jpg');
   }
+  /* Kleines Bild bei Desktop ausblenden */
   #kunst img.kunst-bild {
     display: none;
   }
@@ -124,11 +120,21 @@
   #ton {
     background-image: url('images/background/Tonproduktion_1920.JPG');
   }
+  /* kleine Bilder ausblenden, falls vorhanden */
+  #ton img.ton-bild {
+    display: none;
+  }
   #schreib {
     background-image: url('images/background/Schreibfeder_1920.jpg');
   }
+  #schreib img.schreib-bild {
+    display: none;
+  }
   #sonstige {
     background-image: url('images/background/sonstige_1920.jpg');
+  }
+  #sonstige img.sonstige-bild {
+    display: none;
   }
   .overlay {
     background: rgba(0,0,0,0.6);
@@ -153,7 +159,10 @@
   }
   @media (max-width: 768px) {
     #ueber, #kunst, #ton, #schreib, #sonstige { background-image: none; }
-    #ueber img.ueber-bild, #kunst img.kunst-bild { display: block; width: 100%; }
+    /* Hier sichtbar machen, wie gewünscht */
+    #ueber img.ueber-bild, #kunst img.kunst-bild, #ton img.ton-bild, #schreib img.schreib-bild, #sonstige img.sonstige-bild {
+      display: block; width: 100%;
+    }
     #kunst .content-wrapper { flex-direction: column; align-items: center; }
     #kunst-gallery {
       display: grid;
@@ -212,7 +221,6 @@
     <a href="#sonstige">Sonstige Projekte</a>
   </nav>
 </header>
-
 <section id="ueber" class="parallax">
   <img src="images/background/uebermich_768.JPG" alt="Über Mich Bild" class="ueber-bild" />
   <div class="overlay floaty">
@@ -222,7 +230,6 @@
       Die schnell voranschreitende Digitalisierung sehe ich als Chance, Kenntnisse zu vertiefen und mich weiter zu entwickeln, zumal ich mich schon seit meiner Adoleszenz mit diesem Bereich beschäftige.</p>
   </div>
 </section>
-
 <section id="kunst" class="parallax">
   <img src="images/background/Kunstschaffen_768.jpg" alt="Kunstschaffen Bild" class="kunst-bild" />
   <div class="overlay floaty">
@@ -241,7 +248,6 @@
     </div>
   </div>
 </section>
-
 <section id="ton" class="parallax">
   <img src="images/background/Tonproduktion_768.JPG" alt="Tonproduktion Bild" class="ton-bild" />
   <div class="overlay floaty">
@@ -249,7 +255,6 @@
     <p>„Ohne Musik wäre das Leben ein Irrtum.“ — Friedrich Nietzsche</p>
   </div>
 </section>
-
 <section id="schreib" class="parallax">
   <img src="images/background/Schreibfeder_768.jpg" alt="Schreibfeder Bild" class="schreib-bild" />
   <div class="overlay floaty">
@@ -257,7 +262,6 @@
     <p>„Man muss erst zum Leben aufstehen, bevor man sich niedersetzt zum Schreiben.“ — Henry David Thoreau</p>
   </div>
 </section>
-
 <section id="sonstige" class="parallax">
   <img src="images/background/sonstige_768.jpg" alt="Sonstige Projekte Bild" class="sonstige-bild" />
   <div class="overlay floaty">
@@ -265,15 +269,12 @@
     <p>„Die Definition von Wahnsinn ist, immer wieder das Gleiche zu tun und andere Ergebnisse zu erwarten.“ — Albert Einstein</p>
   </div>
 </section>
-
 <div id="lightbox-overlay" tabindex="-1" role="dialog" aria-modal="true">
   <img src="" alt="Vergrößertes Bild" />
 </div>
-
 <footer>
   <p>Alle auf dieser Website gezeigten Inhalte (Bilder, Videos, Texte und Tonaufnahmen) sind Eigenproduktionen und urheberrechtlich geschützt.</p>
 </footer>
-
 <script>
   const images = document.querySelectorAll('#kunst-gallery img');
   const lightbox = document.getElementById('lightbox-overlay');
