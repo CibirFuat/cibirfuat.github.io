@@ -98,7 +98,7 @@
     z-index: -1;
     object-fit: cover;
   }
-  /* Kunstschaffen Hintergrund und mobiles Bild, plus Bilder rechts */
+  /* Kunstschaffen Hintergrund */
   #kunst {
     background-image: url('images/background/Kunstschaffen_1920.jpg');
     background-attachment: fixed;
@@ -122,19 +122,18 @@
     flex-wrap: nowrap;
     align-items: flex-start;
   }
-  /* schmaler Textcontainer für mehr Platz für Bilder */
   #kunst-text {
-    flex: 1 1 300px; /* verändert von 400px auf 300px */
+    flex: 1 1 300px;
     min-width: 250px;
   }
   #kunst-gallery {
-    flex: 1 1 650px; /* etwas mehr Platz weil mehr Bilder */
+    flex: 1 1 650px;
     display: flex;
     gap: 10px;
     justify-content: center;
   }
   #kunst-gallery img {
-    width: 120px; /* kleinere Breite um mehr Bilder nebeneinander */
+    width: 120px;
     border-radius: 8px;
     cursor: pointer;
     object-fit: cover;
@@ -145,7 +144,7 @@
     transform: scale(1.05);
     outline: none;
   }
-  /* Tonproduktion Hintergrund und mobil */
+  /* Tonproduktion Hintergrund */
   #ton {
     background-image: url('images/background/Tonproduktion_1920.JPG');
     background-attachment: fixed;
@@ -162,7 +161,7 @@
     z-index: -1;
     object-fit: cover;
   }
-  /* Schreiberei mit mobil */
+  /* Schreiberei */
   #schreib {
     background-image: url('images/background/Schreibfeder_1920.jpg');
     background-attachment: fixed;
@@ -229,71 +228,21 @@
     }
   }
   @media (max-width: 768px) {
-    #ueber {
-      background-image: none;
-    }
-    #ueber img.ueber-bild {
-      display: block;
-    }
-    #ueber .overlay {
-      padding: 25px;
-    }
-    #kunst {
-      background-image: none;
-    }
-    #kunst img.kunst-bild {
-      display: block;
-    }
-    #kunst .overlay {
-      padding: 25px;
-    }
-    #ton {
-      background-image: none;
-    }
-    #ton img.ton-bild {
-      display: block;
-    }
-    #ton .overlay {
-      padding: 25px;
-    }
-    #schreib {
-      background-image: none;
-    }
-    #schreib img.schreib-bild {
-      display: block;
-    }
-    #schreib .overlay {
-      padding: 25px;
-    }
-    #sonstige {
-      background-image: none;
-    }
-    #sonstige img.sonstige-bild {
-      display: block;
-    }
-    #sonstige .overlay {
-      padding: 25px;
-    }
-    nav a {
-      font-size: 1.5rem;
-      margin: 0 10px;
-    }
-    section {
-      padding: 80px 5% 40px 5%;
-    }
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1rem;
-      max-width: 100%;
-    }
-    /* Auf mobilen Geräten Galerie unter dem Text */
-    #kunst .content-wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
+    #ueber { background-image: none; }
+    #ueber img.ueber-bild { display: block; }
+    #kunst { background-image: none; }
+    #kunst img.kunst-bild { display: block; }
+    #ton { background-image: none; }
+    #ton img.ton-bild { display: block; }
+    #schreib { background-image: none; }
+    #schreib img.schreib-bild { display: block; }
+    #sonstige { background-image: none; }
+    #sonstige img.sonstige-bild { display: block; }
+    nav a { font-size: 1.5rem; margin: 0 10px; }
+    section { padding: 80px 5% 40px 5%; }
+    h1 { font-size: 3.5rem; margin-bottom: 20px; }
+    p { font-size: 1rem; max-width: 100%; }
+    #kunst .content-wrapper { flex-direction: column; align-items: center; }
     #kunst-gallery {
       flex: none;
       display: grid;
@@ -303,29 +252,14 @@
       width: 100%;
       max-width: 600px;
     }
-    #kunst-gallery img {
-      width: 100%;
-      max-width: 280px;
-    }
+    #kunst-gallery img { width: 100%; max-width: 280px; }
   }
   @media (max-width: 480px) {
-    nav a {
-      font-size: 1.2rem;
-      margin: 0 8px;
-    }
-    section {
-      padding: 60px 4% 30px 4%;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    p {
-      font-size: 0.9rem;
-    }
-    .overlay {
-      padding: 20px;
-    }
+    nav a { font-size: 1.2rem; margin: 0 8px; }
+    section { padding: 60px 4% 30px 4%; }
+    h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    p { font-size: 0.9rem; }
+    .overlay { padding: 20px; }
   }
   /* Lightbox Overlay */
   #lightbox-overlay {
@@ -340,8 +274,8 @@
     padding: 20px;
   }
   #lightbox-overlay img {
-    max-width: 72vw; /* 20% kleiner als Vollgröße (90vw) */
-    max-height: 72vh; /* 20% kleiner als Vollhöhe (90vh) */
+    max-width: 72vw;
+    max-height: 72vh;
     border-radius: 12px;
     box-shadow: 0 0 30px #000;
   }
@@ -377,7 +311,6 @@
       <div id="kunst-gallery">
         <img src="images/kunst/Japan.JPG" alt="Japan" tabindex="0" />
         <img src="images/kunst/Kreuz.JPG" alt="Kreuz" tabindex="0" />
-        <img src="images/kunst/London.JPG" alt="London" tabindex="0" />
         <img src="images/kunst/Stadt.jpg" alt="Stadt" tabindex="0" />
         <img src="images/kunst/Schatten.JPG" alt="Schatten" tabindex="0" />
         <img src="images/kunst/Ravioli.JPG" alt="Ravioli" tabindex="0" />
